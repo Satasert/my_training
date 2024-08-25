@@ -16,6 +16,27 @@ def all_passwords(n):
     newcode = code.get(n)
     return newcode
 n = first_digit_num()
-n = int(input('введите шиифр :'))
-print('Шифр   :', n)
+n = int(input('введите код :'))
+print('Код   :', n)
 print('Пароль :', all_passwords(n))
+
+number1 = list(range(1, n))
+number2 = list(range(1, n))
+pairs = []
+result = ""
+
+for i in number1:
+    for j in number2:
+        si1 = i
+        si2 = j
+        if si1 >= si2:
+            continue
+        else:
+            z = n % (si1 + si2)
+            if z == 0:
+                pairs.append([si1, si2])
+                result = result + str(si1) + str(si2)
+print('Числа пары', *pairs)
+print('Укажите пароль', result)
+if int(result) == all_passwords(n):
+    print('Пароль введен верно')
