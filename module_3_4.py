@@ -1,5 +1,5 @@
 #Задача "Однокоренные":
-def single_root_words(root_word, *other_words): #Обявляем фунцию
+def single_root_words(root_word, *other_words): #Объявляем фунцию
     root_word_lower = root_word.lower()
     same_words = [] #Создаем пустой список
     for word in other_words: #Перебираем слова
